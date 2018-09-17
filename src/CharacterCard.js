@@ -12,6 +12,11 @@ export default class Charactercard extends Component {
             this.setState({active: true})
         }
     }
+    componentDidUpdate(prevProps){
+        if(prevProps.attempt != this.props.attempt){
+            this.setState({active: false})
+        }
+    }
     render(){
         let className = `card ${this.state.active ? 'activeCard' : ''}`
         return (
